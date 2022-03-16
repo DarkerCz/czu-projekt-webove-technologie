@@ -66,7 +66,11 @@
                                             <td><?php echo $vozidlo['cena_km'] ?> Kč/km</td>
                                         </tr>
                                     </table>
-                                    <button class="w-100 btn btn-lg btn-zluty" id="rezervovat" name="rezervovat" type="submit">Rezervovat</button>
+                                    <?php if(isset($_SESSION["uzivatel"])): ?>
+                                        <button class="w-100 btn btn-lg btn-zluty" id="rezervovat" name="rezervovat" type="submit">Rezervovat</button>
+                                    <?php else: ?>
+                                        <h4>Pro rezervaci se nejprve přihlaste</h4>
+                                    <?php endif; ?>
                                 </div>
                             </form>
                         </div>
