@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="cs">
+  <head>
+    <meta charset="utf-8">
+    <title>Zkouška Client Side</title>
+    <meta name="description" content="Popis">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <style>
+        .header {
+            overflow: hidden;
+            background-color: #f1f1f1;
+            padding: 10px 10px;
+            margin-bottom: 5px;
+        }
+        .footer {
+            position: fixed;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            text-align: center;
+        }
+
+        @media (max-width: 480px) {
+          div.hide-under-480 {
+            display:none
+          }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="header">
+        <img id="logo-stranky" class="hide-under-480" src="https://autopujcovna.valdauf.eu/assets/img/logo.png" alt="Logo" height="36">
+        <a href="#" class="logo">Název stránky</a>
+    </div>
+      <div class="row">
+        <div class="col">
+          <h2>Menu</h2>
+          <ul>
+            <li>Položka 1</li>
+            <li>Položka 2</li>
+            <li>Položka 3</li>
+          </ul>
+        </div>
+        <div class="col">
+          <form>
+            <div class="form-group">
+              <label for="JmenoInput">Jmeno</label>
+              <input type="text" class="form-control" id="JmenoInput" placeholder="Jmeno" required>
+            </div>
+            <div class="form-group">
+              <label for="PrijmeniInput">Prijmeni</label>
+              <input type="text" class="form-control" id="PrijmeniInput" placeholder="Prijmeni" required>
+            </div>
+            <div class="form-group">
+              <label for="RCInput">Rodne Cislo</label>
+              <input type="text" class="form-control" id="RCInput" placeholder="Rodne cislo" pattern="[0-9]{5,6}\/[0-9]{3,4}" required>
+            </div>
+            <div class="form-group">
+              <label for="EmailInput">Email</label>
+              <input type="email" class="form-control" id="EmailInput" placeholder="Email">
+            </div>
+            <button type="submit" class="btn btn-primary">Odeslat</button>
+          </form>
+        </div>
+        <div class="col hide-under-480">
+          <img src="https://autopujcovna.valdauf.eu/assets/img/s_octavia.jpg" alt="Auto" width="50%">
+          <img src="https://autopujcovna.valdauf.eu/assets/img/s_octavia.jpg" alt="Auto" width="50%">
+        </div>
+      </div>
+    <div class="footer">
+        <p>Footer</p>
+    </div>
+  </body>
+</html>

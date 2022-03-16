@@ -1,0 +1,65 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+main > .container {
+  padding: 60px 15px 0;
+}
+
+body{
+    background-color: #FBFBFD;
+    font-family: 'Roboto';
+}
+.bd-placeholder-img {
+    font-size: 1.125rem;
+    text-anchor: middle;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+}
+
+@media (min-width: 768px) {
+    .bd-placeholder-img-lg {
+        font-size: 3.5rem;
+    }
+}
+
+nav.navbar {
+    background-color: white;
+}
+
+.jumbotron{
+    background: url(../img/pozadi.webp);
+    background-position: center;
+    background-size: cover;
+    min-height: 1000px;
+}
+
+.btn-zluty{
+    color: #000;
+    background-color: #FFBB03;
+    border-color: #FFBB03;
+}
+
+.center {
+    margin: auto;
+    width: 50%;
+    border: 3px solid green;
+
+}
+
+.text-zluta{
+    color: #FFBB03 !important;
+}
+
+.footer{
+    background-color: #c4c4c4 !important;
+}
+
+.dostupnost-panel{
+    background: url(../img/img-24-7.webp);
+    background-position: center;
+    background-size: cover;
+}
+
+.float-right{
+    float: right;
+}
