@@ -1,6 +1,4 @@
-<?php
-    session_start();
-?>
+
 <header>
     <nav class="navbar navbar-expand-md fixed-top">
         <div class="container-fluid">
@@ -15,7 +13,7 @@
                     </button>
                     <ul class="dropdown-menu dropdown-menu-end dropdown-menu-lg-start" aria-labelledby="ucet-btn">
                         <?php if (je_spravce($pdo)): ?>
-                            <li><a id="nove-vozidlo-btn" class="dropdown-item" href="nove_vozidlo.php">Přidat vozidlo</a></li>
+                            <li><a id="seznam-vozidel-btn" class="dropdown-item" href="seznam_vozidel.php">Vozidla</a></li>
                         <?php endif; ?>
                         <li><a id="rezervace-btn" class="dropdown-item" href="rezervace.php">Rezervace</a></li>
                         <li><a id="logout-btn" class="dropdown-item" href="logout.php">Odhlásit</a></li>

@@ -30,7 +30,6 @@
             $uzivatel = $dotaz->fetch();
             if(password_verify($heslo, $uzivatel["heslo"])){
                 $_SESSION['uzivatel'] = $uzivatel["email"];
-                $_SESSION['uzivatel_id'] = $uzivatel["id"];
                 header("location:index.php"); 
                 return true;
             }
@@ -84,7 +83,6 @@
         $insertId = $pdo->lastInsertId();
         if($insertId){
             $_SESSION['uzivatel'] = $email;
-            $_SESSION['uzivatel_id'] = $uzivatel["id"];
             header("location:index.php"); 
         }
         else{
@@ -170,10 +168,45 @@
             $insertId = $pdo->lastInsertId();
             if($insertId){
                 alert("Vozidlo bylo úspěšně uloženo");
-                return true;
+                header('Location: seznam_vozidel.php');
             }
         }
         alert("Problém při zakládání vozidla");
+        return false;
+    }
+
+    function editace_vozidla(PDO $pdo, $id, $znacka, $model, $rok_vyroby, $spotreba, $nadrz, $hmotnost, $objem_motoru, $vykon, $karoserie, $pocet_mist, $prevodovka, $cena1, $cena2, $cena3, $cena4, $denni_najezd, $cena_km, $foto, $palivo){
+        if (je_spravce($pdo)){
+            $dotaz = $pdo->prepare("UPDATE vozidlo SET znacka=:znacka, model=:model, rok_vyroby=:rok_vyroby, spotreba=:spotreba, nadrz=:nadrz, hmotnost=:hmotnost, objem_motoru=:objem_motoru, vykon=:vykon, karoserie=:karoserie, pocet_mist=:pocet_mist, prevodovka=:prevodovka,
+             cena1=:cena1, cena2=:cena2, cena3=:cena3, cena4=:cena4, denni_najezd=:denni_najezd, cena_km=:cena_km, foto=:foto, palivo=:palivo WHERE id =:id");
+            $vysledek = $dotaz->execute(array(
+                ":znacka" => $znacka,
+                ":model" => $model,
+                ":rok_vyroby" => $rok_vyroby,
+                ":spotreba" => $spotreba,
+                ":nadrz" => $nadrz,
+                ":hmotnost" => $hmotnost,
+                ":objem_motoru" => $objem_motoru,
+                ":vykon" => $vykon,
+                ":karoserie" => $karoserie,
+                ":pocet_mist" => $pocet_mist,
+                ":prevodovka" => $prevodovka,
+                ":cena1" => $cena1,
+                ":cena2" => $cena2,
+                ":cena3" => $cena3,
+                ":cena4" => $cena4,
+                ":denni_najezd" => $denni_najezd,
+                ":cena_km" => $cena_km,
+                ":foto" => $foto,
+                ":palivo" => $palivo,
+                ":id" => $id,
+            ));
+            if($vysledek){
+                alert("Vozidlo bylo úspěšně uloženo");
+                header('Location: seznam_vozidel.php');
+            }
+        }
+        alert("Problém při editaci vozidla");
         return false;
     }
 
